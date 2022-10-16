@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-// setValue
-// type Dispatch = (value: number | ((prevState: number) => number)) => void;
+/*
+const array: Array<number> = [1, 2, 3];
+const readonlyArray: ReadonlyArray<number> = [1, 2, 3];
+array[0] = 11;
+readonlyArray[0] = 11;
+*/
 
 const Conter: React.FC<{}> = () => {
   const initialValue: any = 0;
@@ -14,11 +18,17 @@ const Conter: React.FC<{}> = () => {
     setValue((prevState) => prevState - 1);
   };
 
+  const renderTimes = useRef<number>(0);
+  useEffect(() => {
+    renderTimes.current = renderTimes.current + 1;
+  });
+
   return (
     <div>
       <div>value: {value}</div>
       <button onClick={increment}>+1</button>
       <button onClick={decrement}>-1</button>
+      <div>This component was re-rendered {renderTimes.current} times!</div>
     </div>
   );
 };
