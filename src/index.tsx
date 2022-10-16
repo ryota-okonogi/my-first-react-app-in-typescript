@@ -6,6 +6,6 @@ import App from './App'; // Appというモジュール(自作のモジュール
 // type Foo = JSX.IntrinsicAttributes; // IntrinsicAttributesの定義元を確認したコード
 
 // インポートしたReactDOMの機能を利用してrenderメソッドを実行している
-ReactDOM.render(<App message="Hello, React!"/>, // 「[props] APPコンポーネント(App.tsx)側にデータを渡している」
+ReactDOM.render(<App/>, // 「[props] APPコンポーネント(App.tsx)側にデータを渡している」
 document.getElementById('root')
 ); // renderメソッドで、「HTML(index.html)上にある'root'というidが振られているDOMを <App /> に置き換える」ということをやっている。
