@@ -12,7 +12,7 @@ const App: React.FunctionComponent<AppProps> = ({message}) => { // const App = é
 
 App.defaultProps = {
   message: 'Hello, defaultProps!',
-  
+
 };
 
 export default App;
